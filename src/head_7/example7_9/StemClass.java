@@ -5,18 +5,21 @@ package head_7.example7_9;
  */
 class Component1 {
     Component1(String s){
-        System.out.println(s);
+        System.out.println(s + " " + stat);
     }
+    static String stat = "hello";
 }
 class Component2 {
     Component2(String s){
-        System.out.println(s);
+        System.out.println(s + " " + stat);
     }
+    static String stat = "hello";
 }
 class Component3 {
     Component3(String s){
-        System.out.println(s);
+        System.out.println(s + " " + stat);
     }
+    static String stat = "hello";
 }
 class Root {
     Root(String s){
@@ -36,8 +39,10 @@ public class StemClass extends Root {
         System.out.println("Class Stem");
     }
     public static void main(String[] args) {
+        System.out.println(stat);
         System.out.println("Before call constructor");
         StemClass sc = new StemClass();
         System.out.println("After call constructor");
     }
+    static String stat = "hello";
 }
