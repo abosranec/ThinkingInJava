@@ -11,6 +11,16 @@ public class WorkClass {
             g();
         } catch(NewException ne){
             throw new RuntimeException(ne);
+        } finally {
+            System.out.println("Call finally h()");
+        }
+    }
+    private void f(){
+        try{
+            System.out.println("Call f()");
+            return;
+        } finally {
+            System.out.println("Call finally f()");
         }
     }
     private void g() throws NewException{
@@ -18,6 +28,7 @@ public class WorkClass {
     }
     public static void main(String[] args) {
         WorkClass workClass = new WorkClass();
+        workClass.f();
         workClass.h();
     }
 }
