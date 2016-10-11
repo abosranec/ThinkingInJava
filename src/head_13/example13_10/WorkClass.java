@@ -33,3 +33,7 @@ public class WorkClass {
         }
     }
 }
+
+    //Java now has regular expressions
+    //Arline ate eight apples and one orange while Anita hadn't any
+    //(?i)((^[aeiou])|(\s+[aeiou]))\w+?[aeiou]\b
