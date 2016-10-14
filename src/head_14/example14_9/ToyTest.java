@@ -23,11 +23,12 @@ implements HasBatteries, Waterproof, Shoots {
   float f = 20.2f;
   double d = 20.2;
   String str = "hello";
-  FancyToy() { }
-  void method1(){}
-  void method2(String str, int i){}
-  String method3(String str){ return str; }
-  static int method4(){ return 5; }
+  public FancyToy() { } // class is not public
+  public void method1(){}
+  public void method2(String str, int i){}
+  public String method3(String str){ return str; }
+  public static int method4(){ return 5; }
+  private void method5(){ }
 }
 
 public class ToyTest {
@@ -41,9 +42,10 @@ public class ToyTest {
   static void printMethod(Class c) {
     int i = 0;
     System.out.println("Method for class \"" + c.getCanonicalName() + "\"");
-    for (Method f : c.getDeclaredMethods()) {
-      System.out.format("Method %2d: name: %6s; return type: %7s; Parameters: ",
-              i++, f.getName(), f.getReturnType().getSimpleName());
+    for (Method f : c.getMethods()) {
+      //System.out.println(f.toString());
+      System.out.format("Method %2d: name: %90s; return type: %7s; Parameters: ",
+              i++, f.toString(), f.getReturnType().getSimpleName());
       for (Parameter p : f.getParameters()) {
         System.out.format("%5s (%s), ", p.getName(), p.getType().getSimpleName());
       }
