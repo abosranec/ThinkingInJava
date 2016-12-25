@@ -10,7 +10,7 @@ public class CatchAction extends JFrame {
     private JButton b1 = new JButton("button 1"),
             b2 = new JButton("button 2");
     private JTextField tf = new JTextField(10);
-    private JTextArea ta = new JTextArea();
+    private JTextArea ta = new JTextArea(20,20);
     private int counter = 0;
 
     private class ButtonListener implements ActionListener{
@@ -31,10 +31,11 @@ public class CatchAction extends JFrame {
         add(b1);
         add(b2);
         add(tf);
-        add(ta);
+        //add(ta);
+        add(new JScrollPane(ta));
     }
 
     public static void main(String[] args) {
-        SwingConsole.run(new CatchAction(),300,300);
+        SwingConsole.run(new CatchAction(),600,600);
     }
 }
