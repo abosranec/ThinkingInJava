@@ -19,3 +19,4 @@
 книга "Thinking in Pattern"
 книга "Thinking in Enterprise Java"
 read about JDBS
+on page 1161 many helpful books !!
